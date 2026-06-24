@@ -1,0 +1,36 @@
+package game.grounds;
+
+import edu.monash.fit2099.engine.positions.Ground;
+import edu.monash.fit2099.engine.actors.Actor;
+
+/**
+ * <h1>Glass Ground</h1>
+ * <p>
+ * The {@code Glass} ground represents the transparent walls that outline
+ * store displays. It prevents actors from stepping onto the tile while still
+ * letting items be showcased on top of it.
+ * </p>
+ *
+ * @author Min Zheng Yuan
+ * @version 1.0
+ */
+public class Glass extends Ground {
+
+    /**
+     * Constructor for {@link Glass}.
+     */
+    public Glass() {
+        super(GroundInfo.GLASS.getDISPLAY_CHAR(), GroundInfo.GLASS.getNAME());
+    }
+
+    /**
+     * Determine this ground type can actor enter.
+     *
+     * @param actor the Actor to check
+     * @return true if actor can enter, false otherwise
+     */
+    @Override
+    public boolean canActorEnter(Actor actor) {
+        return false;
+    }
+}

@@ -1,0 +1,48 @@
+package game.grounds.trees.apples;
+
+import edu.monash.fit2099.engine.positions.Location;
+import game.grounds.GroundInfo;
+import game.grounds.trees.ProduceableFruitTree;
+
+/**
+ * <h1>Class represent AppleTree</h1>
+ *
+ * <p>
+ * Represent an Apple tree in this system.
+ * </p>
+ * <p>
+ * Extends from {@link ProduceableFruitTree}
+ *
+ * @author Shee Seng Cheng
+ * @version 1.0
+ */
+public class AppleTree extends ProduceableFruitTree
+{
+    /**
+     * Indicate how many turn for this tree to produce a fruit
+     */
+    private static final int TURN_TO_PRODUCE_FRUIT = 3;
+
+    /**
+     * Constructor for AppleTree
+     */
+    public AppleTree()
+    {
+        //Pass its parameter to its parent's constructor.
+        super(GroundInfo.APPLE_TREE.getDISPLAY_CHAR(),
+                GroundInfo.APPLE_TREE.getNAME(),
+                TURN_TO_PRODUCE_FRUIT);
+    }
+
+    /**
+     * Method to summon a fruits on a specific location.
+     *
+     * @param location the place to drop the fruit to.
+     */
+    @Override
+    protected void summonFruit(Location location)
+    {
+        //Drop an Apple object on to the location.
+        location.addItem(SummonApple.summonApple());
+    }
+}
